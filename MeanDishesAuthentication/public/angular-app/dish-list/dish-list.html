@@ -1,0 +1,29 @@
+<h1>
+    {{vm.title}}
+</h1>
+
+<ul>
+    
+        <li ng-repeat="dish in vm.dishes">
+            <a href="#!/dishes/{{dish._id}}"> {{dish.name}}</a>
+        </li>
+    
+</ul>
+
+
+<form name="vm.dishForm" ng-submit="vm.addDish()" >
+
+    To add a new dish please fill in all the fields below:<BR/>
+
+    Name: <input type="text" name="name" required ng-model="vm.newDishName" style="color:black"/><BR/>
+
+    Country: <input type="text" name="country"  pattern="[a-zA-Z]" ng-model="vm.newDishCountry" style="color:black"/>
+    <span ng-show="vm.dishForm.country.$dirty && vm.dishForm.country.$invalid "> The country name must be a word in lower case </span><BR/>
+
+
+    Ingredient: <input type="text" name="ingredients"  pattern="/[A-Z]/" ng-model="vm.newDishIngredients" style="color:black"/>
+    <span ng-show="vm.dishForm.ingredients.$dirty && vm.dishForm.ingredients.$invalid "> The ingredient must be a word in lower case </span><BR/>
+
+    <button type="submit" class="btn-success">Add Dish</button><BR/>
+
+</form>

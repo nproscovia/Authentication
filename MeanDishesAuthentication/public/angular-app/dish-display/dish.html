@@ -1,0 +1,30 @@
+<h1>Information about the dish:
+    <p>{{vm.dish.name}}
+        
+    </p>
+</h1>
+
+<p>
+ 
+    Dish Name: {{vm.dish.name}} <br>
+    Dish Country: {{vm.dish.country}} <br>
+    Ingredients: {{vm.dish.ingredients}} <br> 
+
+</p>
+<br/>
+
+
+<form name="vm.dishUpdateForm" ng-submit="vm.updateDish()">
+    Fill in the form to update the dish:<br>
+    
+    Name: <input type="text" name="name" required ng-model="vm.editedDishName" style="color:black" /><br>
+    Country: <input type="text" name="country" required ng-model="vm.editedDishCountry" style="color:black" /> <br>
+    
+    <br>
+    <br>
+    
+    <button type="submit" class="btn-success">Edit Dish</button>
+    
+    </form>
+
+<input type = "button" class="btn btn-danger" value ="Delete" ng-click="vm.deleteOneDish"/>

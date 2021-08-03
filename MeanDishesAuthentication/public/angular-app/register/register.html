@@ -1,0 +1,42 @@
+<hi>Register</hi>
+
+<DIV ng-if="vm.message" class="alert alert-success" role="alert">
+    <P>{{ vm.message}}</P>
+  </DIV>
+
+  <!-- if write something wrong, (vm.err) the below error will show.
+   -->
+  <DIV ng-if="vm.err" class="alert alert-danger" role="alert">
+    {{vm.err}}
+  </DIV>
+  <!-- when the form is submiteed, then call vm.register() which is the ng-submit
+     hence need to add a register function in the register controller.
+  so that registration happens. 
+  ng-model="vm.username" has to match with what is in the database or model.
+-->
+
+  <FORM ng-hide="vm.message" name="registerForm" ng-submit="vm.register()">
+    <DIV class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" 
+      placeholder="Username" ng-model="vm.username" autocapitalize="none"/>
+    </DIV>
+    <DIV class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" 
+      placeholder="Password" ng-model="vm.password" autocapitalize="none"/>
+    </DIV>
+    <DIV class="form-group">
+      <label for="password-repeat">Repeat Password</label>
+      ​
+      <input type="password" class="form-control" id="password-repeat" placeholder="Password" ng-model="vm.passwordRepeat" autocapitalize="none"/>
+
+     
+    </DIV>
+    <DIV class="form-group">
+        <label for="name">Name</label>
+        <input type="name" class="form-control" id="name" 
+        placeholder="Name" ng-model="vm.name" autocapitalize="none"/>
+      </DIV>​
+  <BUTTON type="submit" class="btn btn-success">Register</BUTTON>​
+</FORM>

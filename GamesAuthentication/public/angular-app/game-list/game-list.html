@@ -1,0 +1,52 @@
+<h1>
+    {{vm.title}}
+</h1>
+
+<!-- //STUDY THIS AGAIN.
+jkfvdkfjvkdf
+gjdghudf
+ghjdcghjd -->
+<ul>
+    
+        <li ng-repeat="game in vm.games">
+            <a ng-href="#!/games/{{game._id}}">{{game.title}}</a>
+        </li>
+    
+</ul>
+
+<!-- //"vm.addGame()" add this as a function to the controller 
+kgrfjdf;
+nrgr
+hdfjlgri -->
+
+
+<form name="vm.gameForm" ng-submit="vm.addGame()" >
+
+    To add a new game please fill in all the fields below:<BR/>
+
+    Title: <input type="text" name="title" required ng-model="vm.newGameTitle" style="color:black"/><BR/>
+
+    Price: <input type="text" name="price"  ng-model="vm.newGamePrice" style="color:black"/><BR/>
+
+
+    Rating: <input type="text" name="rate"  pattern="[1-5]" ng-model="vm.newGameRating" style="color:black"/>
+    <span ng-show="vm.gameForm.rate.$dirty && vm.gameForm.rate.$invalid "> The rate must be a number between 1 and 5</span><BR/>
+
+    Minimum Players: <input type="text" name="minPlayers"  pattern="[1-9][0-9]?" ng-model="vm.newGameMinPlayers" style="color:black"/>
+    <span ng-show="vm.gameForm.minPlayers.$dirty && vm.gameForm.minPlayers.$invalid">Minimum players should be a number
+        1-99</span><BR/>
+
+
+    Maximum Players: <input type="text" name="maxPlayers"  pattern="[1-9][0-9]?" ng-model="vm.newGameMaxPlayers" style="color:black"/>
+    <span ng-show="vm.gameForm.maxPlayers.$dirty && vm.gameForm.maxPlayers.$invalid">maximum players should be a number
+        1-99</span><BR/>
+
+    Minimum  Age: <input type="text" name="minAge" pattern="[1-9][0-9]?" ng-model="vm.newGameMinAge" style="color:black"/>
+    <span ng-show="vm.gameForm.minAge.$dirty && vm.gameForm.minAge.$invalid">Min age should be a number
+        2-8</span><BR/>
+
+    Designer name: <input type="text" name="designer" r ng-model="vm.newGameDesigner" style="color:black"/><BR/>
+
+    <button type="submit" class="btn-success">Add Game</button><BR/>
+
+</form>
